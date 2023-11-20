@@ -10,12 +10,9 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('blockchains', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('coin');
-            $table->timestamps();
-        });
+        Artisan::call('db:seed ExchangeSeeder --force');
+        Artisan::call('db:seed BlockchainSeeder --force');
+        Artisan::call('db:seed CryptocurrencySeeder --force');
     }
 
     /**
@@ -23,6 +20,6 @@ return new class () extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('blockchains');
+        //
     }
 };

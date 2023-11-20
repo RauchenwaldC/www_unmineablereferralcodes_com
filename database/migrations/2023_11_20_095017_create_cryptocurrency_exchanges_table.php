@@ -12,12 +12,9 @@ return new class () extends Migration {
     {
         Schema::create('cryptocurrency_exchanges', function (Blueprint $table) {
             $table->id();
-            $table->integer('exchange_id');
-            $table->integer('cryptocurrency_id');
+            $table->foreignId('exchange_id');
+            $table->foreignId('cryptocurrency_id');
             $table->timestamps();
-
-            $table->foreign('exchange_id')->references('id')->on('exchanges');
-            $table->foreign('cryptocurrency_id')->references('id')->on('cryptocurrencies');
         });
     }
 
