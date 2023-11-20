@@ -12,8 +12,8 @@ return new class () extends Migration {
     {
         Schema::create('cryptocurrency_blockchains', function (Blueprint $table) {
             $table->id();
-            $table->int('blockchain_id');
-            $table->int('cryptocurrency_id');
+            $table->integer('blockchain_id');
+            $table->integer('cryptocurrency_id');
             $table->string('referral-code');
             $table->timestamps();
 

@@ -12,8 +12,8 @@ return new class () extends Migration {
     {
         Schema::create('cryptocurrency_exchanges', function (Blueprint $table) {
             $table->id();
-            $table->int('exchange_id');
-            $table->int('cryptocurrency_id');
+            $table->integer('exchange_id');
+            $table->integer('cryptocurrency_id');
             $table->timestamps();
 
             $table->foreign('exchange_id')->references('id')->on('exchanges');
